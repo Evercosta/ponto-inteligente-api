@@ -1,10 +1,17 @@
 package com.pontointeligente.api.repositories;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
+
+import com.pontointeligente.api.entities.Empresa;
+import com.pontointeligente.api.entities.Funcionario;
+import com.pontointeligente.api.entities.Lancamento;
+import com.pontointeligente.api.enums.PerfilEnum;
+import com.pontointeligente.api.enums.TipoEnum;
+import com.pontointeligente.api.utils.PasswordUtils;
 
 import org.junit.After;
 import org.junit.Before;
@@ -16,13 +23,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.pontointeligente.api.entities.Empresa;
-import com.pontointeligente.api.entities.Funcionario;
-import com.pontointeligente.api.entities.Lancamento;
-import com.pontointeligente.api.enums.PerfilEnum;
-import com.pontointeligente.api.enums.TipoEnum;
-import com.pontointeligente.api.utils.PasswordUtils;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
