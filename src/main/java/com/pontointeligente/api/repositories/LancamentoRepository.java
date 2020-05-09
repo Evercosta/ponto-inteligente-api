@@ -20,6 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface LancamentoRepository extends JpaRepository<Lancamento, Long> {
 
 	List<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId);
-
+	// paginação dos resultados
 	Page<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId, Pageable pageable);
 }
