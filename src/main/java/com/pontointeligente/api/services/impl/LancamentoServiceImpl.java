@@ -28,13 +28,13 @@ public class LancamentoServiceImpl implements LancamentoService {
 		return this.lancamentoRepository.findByFuncionarioId(funcionarioId, pageRequest);
 	}
 	
-	@Cacheable("lancamentoPorId")
+	@Cacheable("lancamentoPorId") // ehcache
 	public Optional<Lancamento> buscarPorId(Long id) {
 		log.info("Buscando um lançamento pelo ID {}", id);
 		return this.lancamentoRepository.findById(id);
 	}
 	
-	@CachePut("lancamentoPorId")
+	@CachePut("lancamentoPorId") // atualiza o ehcache
 	public Lancamento persistir(Lancamento lancamento) {
 		log.info("Persistindo o lançamento: {}", lancamento);
 		return this.lancamentoRepository.save(lancamento);
